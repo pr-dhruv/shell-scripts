@@ -33,7 +33,7 @@ function process_parameter() {
   done
 
   unset PARAM_CONFIG_COUNT
-  env | grep "^PARAM_" | sort
+#  env | grep "^PARAM_" | sort
 
 }
 
