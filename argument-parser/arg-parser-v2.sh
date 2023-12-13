@@ -32,6 +32,7 @@ function process_parameter() {
     done
   done
 
+  unset PARAM_CONFIG_COUNT
   env | grep "^PARAM_" | sort
 
 }
@@ -42,7 +43,7 @@ function load_args_database() {
   if [ -n "$PARAM_CONFIG_FILE_VALUE" ]; then
     CONFIG_FILE_PATH=$PARAM_CONFIG_FILE_VALUE
   fi
-  echo "Loading configuration file : $CONFIG_FILE_PATH"
+#  echo "Loading configuration file : $CONFIG_FILE_PATH"
 
   # Trimming the multiple tabs and spaces into single space, Removing the empty lines
   PARAMS=$(tr -s ' ' < "$CONFIG_FILE_PATH" | grep -v "^#" | grep -v "^$")
