@@ -14,8 +14,7 @@ function process_parameter() {
       long=$(echo "$longArray" | cut -d":" -f"$i")
       param=$(echo "$paramNameArray" | cut -d":" -f"$i")
 
-      echo "$1" | grep "=" > /dev/null
-      if [ $? -eq 0 ]; then
+      if echo "$1" | grep "=" > /dev/null; then
         argName=$(echo "$1" | cut -d'=' -f1)
         argValue=$(echo "$1" | cut -d'=' -f2)
         if [[ "$argName" = "$short" || "$argName" = "$long" ]]; then
